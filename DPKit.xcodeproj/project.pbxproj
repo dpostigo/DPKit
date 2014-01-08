@@ -14,10 +14,10 @@
 		33A64408187B718400DBAC5C /* libDPKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A643EF187B718300DBAC5C /* libDPKit.a */; };
 		33A6440E187B718400DBAC5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33A6440C187B718400DBAC5C /* InfoPlist.strings */; };
 		33A64410187B718400DBAC5C /* DPKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A6440F187B718400DBAC5C /* DPKitTests.m */; };
-		F29B8376A65E43E8406B522B /* NSBezierPath+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B8A3E5FE2AB3D119F1FF7 /* NSBezierPath+RoundedCorners.m */; };
-		F29B87166FC9F0B561C70998 /* NSBezierPath+RoundedCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = F29B8E8A04435A525B4AD780 /* NSBezierPath+RoundedCorners.h */; };
-		F29B881191D93164BB7D5ADC /* NSBezierPath+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F29B89861B90C7E72B3E9D6E /* NSBezierPath+DPKit.h */; };
-		F29B8BDDA3FBB8E947FFBB28 /* NSBezierPath+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F29B87939BD59879717AD453 /* NSBezierPath+DPKit.m */; };
+		33C4CC43187E0211008FB67E /* NSBezierPath+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33C4CC3F187E0211008FB67E /* NSBezierPath+DPKit.h */; };
+		33C4CC44187E0211008FB67E /* NSBezierPath+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C4CC40187E0211008FB67E /* NSBezierPath+DPKit.m */; };
+		33C4CC45187E0211008FB67E /* NSBezierPath+RoundedCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 33C4CC41187E0211008FB67E /* NSBezierPath+RoundedCorners.h */; };
+		33C4CC46187E0211008FB67E /* NSBezierPath+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C4CC42187E0211008FB67E /* NSBezierPath+RoundedCorners.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 		33A6440B187B718400DBAC5C /* DPKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DPKitTests-Info.plist"; sourceTree = "<group>"; };
 		33A6440D187B718400DBAC5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33A6440F187B718400DBAC5C /* DPKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPKitTests.m; sourceTree = "<group>"; };
-		F29B87939BD59879717AD453 /* NSBezierPath+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+DPKit.m"; sourceTree = "<group>"; };
-		F29B89861B90C7E72B3E9D6E /* NSBezierPath+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+DPKit.h"; sourceTree = "<group>"; };
-		F29B8A3E5FE2AB3D119F1FF7 /* NSBezierPath+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+RoundedCorners.m"; sourceTree = "<group>"; };
-		F29B8E8A04435A525B4AD780 /* NSBezierPath+RoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+RoundedCorners.h"; sourceTree = "<group>"; };
+		33C4CC3F187E0211008FB67E /* NSBezierPath+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+DPKit.h"; sourceTree = "<group>"; };
+		33C4CC40187E0211008FB67E /* NSBezierPath+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+DPKit.m"; sourceTree = "<group>"; };
+		33C4CC41187E0211008FB67E /* NSBezierPath+RoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+RoundedCorners.h"; sourceTree = "<group>"; };
+		33C4CC42187E0211008FB67E /* NSBezierPath+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+RoundedCorners.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +114,10 @@
 		33A643F8187B718300DBAC5C /* DPKit */ = {
 			isa = PBXGroup;
 			children = (
+				33C4CC3E187E0211008FB67E /* osx */,
 				33A643FB187B718300DBAC5C /* DPKit.h */,
 				33A643FC187B718300DBAC5C /* DPKit.m */,
 				33A643F9187B718300DBAC5C /* Supporting Files */,
-				F29B87939BD59879717AD453 /* NSBezierPath+DPKit.m */,
-				F29B89861B90C7E72B3E9D6E /* NSBezierPath+DPKit.h */,
-				F29B8A3E5FE2AB3D119F1FF7 /* NSBezierPath+RoundedCorners.m */,
-				F29B8E8A04435A525B4AD780 /* NSBezierPath+RoundedCorners.h */,
 			);
 			path = DPKit;
 			sourceTree = "<group>";
@@ -151,6 +148,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		33C4CC3E187E0211008FB67E /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				33C4CC3F187E0211008FB67E /* NSBezierPath+DPKit.h */,
+				33C4CC40187E0211008FB67E /* NSBezierPath+DPKit.m */,
+				33C4CC41187E0211008FB67E /* NSBezierPath+RoundedCorners.h */,
+				33C4CC42187E0211008FB67E /* NSBezierPath+RoundedCorners.m */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -158,8 +166,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F29B881191D93164BB7D5ADC /* NSBezierPath+DPKit.h in Headers */,
-				F29B87166FC9F0B561C70998 /* NSBezierPath+RoundedCorners.h in Headers */,
+				33C4CC43187E0211008FB67E /* NSBezierPath+DPKit.h in Headers */,
+				33C4CC45187E0211008FB67E /* NSBezierPath+RoundedCorners.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33A643FD187B718300DBAC5C /* DPKit.m in Sources */,
-				F29B8BDDA3FBB8E947FFBB28 /* NSBezierPath+DPKit.m in Sources */,
-				F29B8376A65E43E8406B522B /* NSBezierPath+RoundedCorners.m in Sources */,
+				33C4CC44187E0211008FB67E /* NSBezierPath+DPKit.m in Sources */,
+				33C4CC46187E0211008FB67E /* NSBezierPath+RoundedCorners.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +429,7 @@
 				33A64415187B718400DBAC5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33A64416187B718400DBAC5C /* Build configuration list for PBXNativeTarget "DPKitTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +438,7 @@
 				33A64418187B718400DBAC5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
