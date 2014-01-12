@@ -7,12 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
-
 enum {
-    AFCornerLowerLeft	= 1 << 0,
-    AFCornerLowerRight	= 1 << 1,
-    AFCornerUpperLeft	= 1 << 2,
-    AFCornerUpperRight	= 1 << 3,
+    AFCornerLowerLeft = 1 << 0,
+    AFCornerLowerRight = 1 << 1,
+    AFCornerUpperLeft = 1 << 2,
+    AFCornerUpperRight = 1 << 3,
 };
 typedef NSUInteger AFCornerOptions;
 
