@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.4"
+  s.version      = "0.0.6"
   s.summary      = "Utilities for Mac OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -20,12 +20,11 @@ Pod::Spec.new do |s|
   s.subspec 'Shared' do |shared|
     shared.osx.source_files = 'DPKit/shared/**/*.{h,m}'
     shared.ios.source_files = 'DPKit/shared/**/*.{h,m}'
-
   end
 
   s.subspec 'Mac OS X' do |mac|
     mac.platform = :osx, '10.7'
-    mac.source_files = 'DPKit/osx/**/*.{h,m}'
+    mac.source_files = 'DPKit/osx/**/*.{h,m}', 'DPKit/shared/**/*.{h,m}'
   end
 
 
@@ -40,7 +39,8 @@ Pod::Spec.new do |s|
   # s.osx.dependency 'DPKit'
 
   s.osx.frameworks   = 'QuartzCore', 'AppKit'
-  s.osx.dependency   'NSView-DPAutolayout'
+  
+  s.osx.dependency   'NSView-DPAutolayout', '~> 0.0.11'
   s.ios.frameworks   = 'AppKit', 'UIKit'
 
 

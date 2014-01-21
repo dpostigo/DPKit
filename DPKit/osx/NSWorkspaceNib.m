@@ -57,9 +57,9 @@
 - (id) controllerForClass: (id) object {
     id ret = nil;
     if ([object isKindOfClass: [NSString class]]) {
-        ret = [self nibControllerForClassString: object];
+        ret = [self controllerForClassString: object];
     } else {
-        ret = [self nibControllerForClassReference: object];
+        ret = [self controllerForClassReference: object];
     }
     return ret;
 

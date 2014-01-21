@@ -15,5 +15,8 @@
 - (void) load;
 - (id) objectForClass: (Class) class;
 - (id) objectWithIdentifier: (NSString *) identifier;
+- (id) controllerForClass: (id) object;
+- (id) controllerForClassReference: (Class) class;
 - (id) viewForClass: (id) object;
+- (NSView *) viewForClassReference: (Class) class;
 @end
