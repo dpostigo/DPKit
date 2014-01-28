@@ -20,11 +20,16 @@ Pod::Spec.new do |s|
   s.subspec 'Shared' do |shared|
     shared.osx.source_files = 'DPKit/shared/**/*.{h,m}'
     shared.ios.source_files = 'DPKit/shared/**/*.{h,m}'
+    shared.osx.dependency   'JMSimpleDate', '~> 0.0.1'
   end
 
   s.subspec 'Mac OS X' do |mac|
     mac.platform = :osx, '10.7'
-    mac.source_files = 'DPKit/osx/**/*.{h,m}', 'DPKit/shared/**/*.{h,m}'
+    mac.source_files = 'DPKit/osx/*.{h,m}', 'DPKit/shared/**/*.{h,m}'
+
+    mac.subspec 'Graphics' do |graphics|
+      graphics.source_files = 'DPKit/osx/Graphics/*.{h,m}'
+    end
   end
 
 
@@ -39,8 +44,10 @@ Pod::Spec.new do |s|
   # s.osx.dependency 'DPKit'
 
   s.osx.frameworks   = 'QuartzCore', 'AppKit'
-  
+
   s.osx.dependency   'NSView-DPAutolayout', '~> 0.0.11'
+  s.osx.dependency   'JMSimpleDate'
+  
   s.ios.frameworks   = 'AppKit', 'UIKit'
 
 

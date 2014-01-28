@@ -8,13 +8,13 @@
 @implementation NSBezierPath (DPKit)
 
 - (CGPathRef) quartzPath {
-    int i, numElements;
+    int i;
 
     // Need to begin a path here.
     CGPathRef immutablePath = NULL;
 
     // Then draw the path elements.
-    numElements = [self elementCount];
+   NSInteger numElements = [self elementCount];
     if (numElements > 0) {
         CGMutablePathRef path = CGPathCreateMutable();
         NSPoint points[3];
