@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		338FDE14187E190100CAC91E /* NSBezierPath+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 338FDE10187E190100CAC91E /* NSBezierPath+DPKit.h */; };
-		338FDE15187E190100CAC91E /* NSBezierPath+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 338FDE11187E190100CAC91E /* NSBezierPath+DPKit.m */; };
-		338FDE16187E190100CAC91E /* NSBezierPath+RoundedCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 338FDE12187E190100CAC91E /* NSBezierPath+RoundedCorners.h */; };
-		338FDE17187E190100CAC91E /* NSBezierPath+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 338FDE13187E190100CAC91E /* NSBezierPath+RoundedCorners.m */; };
 		338FDE18187E191800CAC91E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A643F7187B718300DBAC5C /* AppKit.framework */; };
 		33A643F3187B718300DBAC5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A643F2187B718300DBAC5C /* Cocoa.framework */; };
 		33A643FD187B718300DBAC5C /* DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A643FC187B718300DBAC5C /* DPKit.m */; };
@@ -19,6 +15,40 @@
 		33A64408187B718400DBAC5C /* libDPKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A643EF187B718300DBAC5C /* libDPKit.a */; };
 		33A6440E187B718400DBAC5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33A6440C187B718400DBAC5C /* InfoPlist.strings */; };
 		33A64410187B718400DBAC5C /* DPKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A6440F187B718400DBAC5C /* DPKitTests.m */; };
+		33B256B018985DDD00595628 /* DPLinedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2568D18985DDD00595628 /* DPLinedView.h */; };
+		33B256B118985DDD00595628 /* DPLinedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2568E18985DDD00595628 /* DPLinedView.m */; };
+		33B256B218985DDD00595628 /* NSBezierPath+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2568F18985DDD00595628 /* NSBezierPath+DPKit.h */; };
+		33B256B318985DDD00595628 /* NSBezierPath+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569018985DDD00595628 /* NSBezierPath+DPKit.m */; };
+		33B256B418985DDD00595628 /* NSBezierPath+RoundedCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569118985DDD00595628 /* NSBezierPath+RoundedCorners.h */; };
+		33B256B518985DDD00595628 /* NSBezierPath+RoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569218985DDD00595628 /* NSBezierPath+RoundedCorners.m */; };
+		33B256B618985DDD00595628 /* NSOutlineView+ItemUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569318985DDD00595628 /* NSOutlineView+ItemUtils.h */; };
+		33B256B718985DDD00595628 /* NSOutlineView+ItemUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569418985DDD00595628 /* NSOutlineView+ItemUtils.m */; };
+		33B256B818985DDD00595628 /* NSWindow+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569518985DDD00595628 /* NSWindow+DPKit.h */; };
+		33B256B918985DDD00595628 /* NSWindow+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569618985DDD00595628 /* NSWindow+DPKit.m */; };
+		33B256BA18985DDD00595628 /* NSArray+DateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569818985DDD00595628 /* NSArray+DateUtils.h */; };
+		33B256BB18985DDD00595628 /* NSArray+DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569918985DDD00595628 /* NSArray+DateUtils.m */; };
+		33B256BC18985DDD00595628 /* NSArray+DPDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569A18985DDD00595628 /* NSArray+DPDictionary.h */; };
+		33B256BD18985DDD00595628 /* NSArray+DPDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569B18985DDD00595628 /* NSArray+DPDictionary.m */; };
+		33B256BE18985DDD00595628 /* NSArray+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569C18985DDD00595628 /* NSArray+DPKit.h */; };
+		33B256BF18985DDD00595628 /* NSArray+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569D18985DDD00595628 /* NSArray+DPKit.m */; };
+		33B256C018985DDD00595628 /* NSArray+DPStringSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B2569E18985DDD00595628 /* NSArray+DPStringSearch.h */; };
+		33B256C118985DDD00595628 /* NSArray+DPStringSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B2569F18985DDD00595628 /* NSArray+DPStringSearch.m */; };
+		33B256C218985DDD00595628 /* NSAttributedString+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256A018985DDD00595628 /* NSAttributedString+DPKit.h */; };
+		33B256C318985DDD00595628 /* NSAttributedString+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256A118985DDD00595628 /* NSAttributedString+DPKit.m */; };
+		33B256C418985DDD00595628 /* NSBundle+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256A218985DDD00595628 /* NSBundle+DPKit.h */; };
+		33B256C518985DDD00595628 /* NSBundle+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256A318985DDD00595628 /* NSBundle+DPKit.m */; };
+		33B256C618985DDD00595628 /* NSDate+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256A418985DDD00595628 /* NSDate+DPKit.h */; };
+		33B256C718985DDD00595628 /* NSDate+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256A518985DDD00595628 /* NSDate+DPKit.m */; };
+		33B256C818985DDD00595628 /* NSDictionary+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256A618985DDD00595628 /* NSDictionary+DPKit.h */; };
+		33B256C918985DDD00595628 /* NSDictionary+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256A718985DDD00595628 /* NSDictionary+DPKit.m */; };
+		33B256CA18985DDD00595628 /* NSMutableArray+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256A818985DDD00595628 /* NSMutableArray+DPKit.h */; };
+		33B256CB18985DDD00595628 /* NSMutableArray+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256A918985DDD00595628 /* NSMutableArray+DPKit.m */; };
+		33B256CC18985DDD00595628 /* NSMutableAttributedString+DPKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256AA18985DDD00595628 /* NSMutableAttributedString+DPKit.h */; };
+		33B256CD18985DDD00595628 /* NSMutableAttributedString+DPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256AB18985DDD00595628 /* NSMutableAttributedString+DPKit.m */; };
+		33B256CE18985DDD00595628 /* NSObject+CallSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256AC18985DDD00595628 /* NSObject+CallSelector.h */; };
+		33B256CF18985DDD00595628 /* NSObject+CallSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256AD18985DDD00595628 /* NSObject+CallSelector.m */; };
+		33B256D018985DDD00595628 /* NSString+DPKitUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B256AE18985DDD00595628 /* NSString+DPKitUtils.h */; };
+		33B256D118985DDD00595628 /* NSString+DPKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B256AF18985DDD00595628 /* NSString+DPKitUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,16 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		338FDE10187E190100CAC91E /* NSBezierPath+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+DPKit.h"; sourceTree = "<group>"; };
-		338FDE11187E190100CAC91E /* NSBezierPath+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+DPKit.m"; sourceTree = "<group>"; };
-		338FDE12187E190100CAC91E /* NSBezierPath+RoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+RoundedCorners.h"; sourceTree = "<group>"; };
-		338FDE13187E190100CAC91E /* NSBezierPath+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+RoundedCorners.m"; sourceTree = "<group>"; };
 		33A643EF187B718300DBAC5C /* libDPKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDPKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A643F2187B718300DBAC5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		33A643F5187B718300DBAC5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33A643F6187B718300DBAC5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		33A643F7187B718300DBAC5C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		33A643FA187B718300DBAC5C /* DPKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPKit-Prefix.pch"; sourceTree = "<group>"; };
 		33A643FB187B718300DBAC5C /* DPKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPKit.h; sourceTree = "<group>"; };
 		33A643FC187B718300DBAC5C /* DPKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPKit.m; sourceTree = "<group>"; };
 		33A64402187B718400DBAC5C /* DPKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +74,40 @@
 		33A6440B187B718400DBAC5C /* DPKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DPKitTests-Info.plist"; sourceTree = "<group>"; };
 		33A6440D187B718400DBAC5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33A6440F187B718400DBAC5C /* DPKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPKitTests.m; sourceTree = "<group>"; };
+		33B2568D18985DDD00595628 /* DPLinedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPLinedView.h; sourceTree = "<group>"; };
+		33B2568E18985DDD00595628 /* DPLinedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPLinedView.m; sourceTree = "<group>"; };
+		33B2568F18985DDD00595628 /* NSBezierPath+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+DPKit.h"; sourceTree = "<group>"; };
+		33B2569018985DDD00595628 /* NSBezierPath+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+DPKit.m"; sourceTree = "<group>"; };
+		33B2569118985DDD00595628 /* NSBezierPath+RoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+RoundedCorners.h"; sourceTree = "<group>"; };
+		33B2569218985DDD00595628 /* NSBezierPath+RoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+RoundedCorners.m"; sourceTree = "<group>"; };
+		33B2569318985DDD00595628 /* NSOutlineView+ItemUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOutlineView+ItemUtils.h"; sourceTree = "<group>"; };
+		33B2569418985DDD00595628 /* NSOutlineView+ItemUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOutlineView+ItemUtils.m"; sourceTree = "<group>"; };
+		33B2569518985DDD00595628 /* NSWindow+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+DPKit.h"; sourceTree = "<group>"; };
+		33B2569618985DDD00595628 /* NSWindow+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+DPKit.m"; sourceTree = "<group>"; };
+		33B2569818985DDD00595628 /* NSArray+DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DateUtils.h"; sourceTree = "<group>"; };
+		33B2569918985DDD00595628 /* NSArray+DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DateUtils.m"; sourceTree = "<group>"; };
+		33B2569A18985DDD00595628 /* NSArray+DPDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DPDictionary.h"; sourceTree = "<group>"; };
+		33B2569B18985DDD00595628 /* NSArray+DPDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DPDictionary.m"; sourceTree = "<group>"; };
+		33B2569C18985DDD00595628 /* NSArray+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DPKit.h"; sourceTree = "<group>"; };
+		33B2569D18985DDD00595628 /* NSArray+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DPKit.m"; sourceTree = "<group>"; };
+		33B2569E18985DDD00595628 /* NSArray+DPStringSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DPStringSearch.h"; sourceTree = "<group>"; };
+		33B2569F18985DDD00595628 /* NSArray+DPStringSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DPStringSearch.m"; sourceTree = "<group>"; };
+		33B256A018985DDD00595628 /* NSAttributedString+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+DPKit.h"; sourceTree = "<group>"; };
+		33B256A118985DDD00595628 /* NSAttributedString+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+DPKit.m"; sourceTree = "<group>"; };
+		33B256A218985DDD00595628 /* NSBundle+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+DPKit.h"; sourceTree = "<group>"; };
+		33B256A318985DDD00595628 /* NSBundle+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+DPKit.m"; sourceTree = "<group>"; };
+		33B256A418985DDD00595628 /* NSDate+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DPKit.h"; sourceTree = "<group>"; };
+		33B256A518985DDD00595628 /* NSDate+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DPKit.m"; sourceTree = "<group>"; };
+		33B256A618985DDD00595628 /* NSDictionary+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DPKit.h"; sourceTree = "<group>"; };
+		33B256A718985DDD00595628 /* NSDictionary+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DPKit.m"; sourceTree = "<group>"; };
+		33B256A818985DDD00595628 /* NSMutableArray+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+DPKit.h"; sourceTree = "<group>"; };
+		33B256A918985DDD00595628 /* NSMutableArray+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+DPKit.m"; sourceTree = "<group>"; };
+		33B256AA18985DDD00595628 /* NSMutableAttributedString+DPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+DPKit.h"; sourceTree = "<group>"; };
+		33B256AB18985DDD00595628 /* NSMutableAttributedString+DPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+DPKit.m"; sourceTree = "<group>"; };
+		33B256AC18985DDD00595628 /* NSObject+CallSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CallSelector.h"; sourceTree = "<group>"; };
+		33B256AD18985DDD00595628 /* NSObject+CallSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CallSelector.m"; sourceTree = "<group>"; };
+		33B256AE18985DDD00595628 /* NSString+DPKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DPKitUtils.h"; sourceTree = "<group>"; };
+		33B256AF18985DDD00595628 /* NSString+DPKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DPKitUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +175,9 @@
 		33A643F8187B718300DBAC5C /* DPKit */ = {
 			isa = PBXGroup;
 			children = (
-				338FDE10187E190100CAC91E /* NSBezierPath+DPKit.h */,
-				338FDE11187E190100CAC91E /* NSBezierPath+DPKit.m */,
-				338FDE12187E190100CAC91E /* NSBezierPath+RoundedCorners.h */,
-				338FDE13187E190100CAC91E /* NSBezierPath+RoundedCorners.m */,
-				33C4CC3E187E0211008FB67E /* osx */,
+				33B2568A18985DDD00595628 /* ios */,
+				33B2568B18985DDD00595628 /* osx */,
+				33B2569718985DDD00595628 /* shared */,
 				33A643FB187B718300DBAC5C /* DPKit.h */,
 				33A643FC187B718300DBAC5C /* DPKit.m */,
 				33A643F9187B718300DBAC5C /* Supporting Files */,
@@ -131,7 +188,6 @@
 		33A643F9187B718300DBAC5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				33A643FA187B718300DBAC5C /* DPKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,11 +210,67 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		33C4CC3E187E0211008FB67E /* osx */ = {
+		33B2568A18985DDD00595628 /* ios */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		33B2568B18985DDD00595628 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				33B2568C18985DDD00595628 /* Graphics */,
+				33B2568F18985DDD00595628 /* NSBezierPath+DPKit.h */,
+				33B2569018985DDD00595628 /* NSBezierPath+DPKit.m */,
+				33B2569118985DDD00595628 /* NSBezierPath+RoundedCorners.h */,
+				33B2569218985DDD00595628 /* NSBezierPath+RoundedCorners.m */,
+				33B2569318985DDD00595628 /* NSOutlineView+ItemUtils.h */,
+				33B2569418985DDD00595628 /* NSOutlineView+ItemUtils.m */,
+				33B2569518985DDD00595628 /* NSWindow+DPKit.h */,
+				33B2569618985DDD00595628 /* NSWindow+DPKit.m */,
+			);
 			path = osx;
+			sourceTree = "<group>";
+		};
+		33B2568C18985DDD00595628 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				33B2568D18985DDD00595628 /* DPLinedView.h */,
+				33B2568E18985DDD00595628 /* DPLinedView.m */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		33B2569718985DDD00595628 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				33B2569818985DDD00595628 /* NSArray+DateUtils.h */,
+				33B2569918985DDD00595628 /* NSArray+DateUtils.m */,
+				33B2569A18985DDD00595628 /* NSArray+DPDictionary.h */,
+				33B2569B18985DDD00595628 /* NSArray+DPDictionary.m */,
+				33B2569C18985DDD00595628 /* NSArray+DPKit.h */,
+				33B2569D18985DDD00595628 /* NSArray+DPKit.m */,
+				33B2569E18985DDD00595628 /* NSArray+DPStringSearch.h */,
+				33B2569F18985DDD00595628 /* NSArray+DPStringSearch.m */,
+				33B256A018985DDD00595628 /* NSAttributedString+DPKit.h */,
+				33B256A118985DDD00595628 /* NSAttributedString+DPKit.m */,
+				33B256A218985DDD00595628 /* NSBundle+DPKit.h */,
+				33B256A318985DDD00595628 /* NSBundle+DPKit.m */,
+				33B256A418985DDD00595628 /* NSDate+DPKit.h */,
+				33B256A518985DDD00595628 /* NSDate+DPKit.m */,
+				33B256A618985DDD00595628 /* NSDictionary+DPKit.h */,
+				33B256A718985DDD00595628 /* NSDictionary+DPKit.m */,
+				33B256A818985DDD00595628 /* NSMutableArray+DPKit.h */,
+				33B256A918985DDD00595628 /* NSMutableArray+DPKit.m */,
+				33B256AA18985DDD00595628 /* NSMutableAttributedString+DPKit.h */,
+				33B256AB18985DDD00595628 /* NSMutableAttributedString+DPKit.m */,
+				33B256AC18985DDD00595628 /* NSObject+CallSelector.h */,
+				33B256AD18985DDD00595628 /* NSObject+CallSelector.m */,
+				33B256AE18985DDD00595628 /* NSString+DPKitUtils.h */,
+				33B256AF18985DDD00595628 /* NSString+DPKitUtils.m */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +280,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338FDE16187E190100CAC91E /* NSBezierPath+RoundedCorners.h in Headers */,
-				338FDE14187E190100CAC91E /* NSBezierPath+DPKit.h in Headers */,
+				33B256B818985DDD00595628 /* NSWindow+DPKit.h in Headers */,
+				33B256CA18985DDD00595628 /* NSMutableArray+DPKit.h in Headers */,
+				33B256CC18985DDD00595628 /* NSMutableAttributedString+DPKit.h in Headers */,
+				33B256B218985DDD00595628 /* NSBezierPath+DPKit.h in Headers */,
+				33B256C618985DDD00595628 /* NSDate+DPKit.h in Headers */,
+				33B256D018985DDD00595628 /* NSString+DPKitUtils.h in Headers */,
+				33B256BC18985DDD00595628 /* NSArray+DPDictionary.h in Headers */,
+				33B256B018985DDD00595628 /* DPLinedView.h in Headers */,
+				33B256BE18985DDD00595628 /* NSArray+DPKit.h in Headers */,
+				33B256C818985DDD00595628 /* NSDictionary+DPKit.h in Headers */,
+				33B256C018985DDD00595628 /* NSArray+DPStringSearch.h in Headers */,
+				33B256BA18985DDD00595628 /* NSArray+DateUtils.h in Headers */,
+				33B256B618985DDD00595628 /* NSOutlineView+ItemUtils.h in Headers */,
+				33B256C418985DDD00595628 /* NSBundle+DPKit.h in Headers */,
+				33B256CE18985DDD00595628 /* NSObject+CallSelector.h in Headers */,
+				33B256B418985DDD00595628 /* NSBezierPath+RoundedCorners.h in Headers */,
+				33B256C218985DDD00595628 /* NSAttributedString+DPKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +381,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B256C318985DDD00595628 /* NSAttributedString+DPKit.m in Sources */,
+				33B256C718985DDD00595628 /* NSDate+DPKit.m in Sources */,
+				33B256CF18985DDD00595628 /* NSObject+CallSelector.m in Sources */,
+				33B256BF18985DDD00595628 /* NSArray+DPKit.m in Sources */,
+				33B256D118985DDD00595628 /* NSString+DPKitUtils.m in Sources */,
+				33B256B718985DDD00595628 /* NSOutlineView+ItemUtils.m in Sources */,
 				33A643FD187B718300DBAC5C /* DPKit.m in Sources */,
-				338FDE15187E190100CAC91E /* NSBezierPath+DPKit.m in Sources */,
-				338FDE17187E190100CAC91E /* NSBezierPath+RoundedCorners.m in Sources */,
+				33B256B118985DDD00595628 /* DPLinedView.m in Sources */,
+				33B256B318985DDD00595628 /* NSBezierPath+DPKit.m in Sources */,
+				33B256CD18985DDD00595628 /* NSMutableAttributedString+DPKit.m in Sources */,
+				33B256B518985DDD00595628 /* NSBezierPath+RoundedCorners.m in Sources */,
+				33B256B918985DDD00595628 /* NSWindow+DPKit.m in Sources */,
+				33B256C118985DDD00595628 /* NSArray+DPStringSearch.m in Sources */,
+				33B256C518985DDD00595628 /* NSBundle+DPKit.m in Sources */,
+				33B256CB18985DDD00595628 /* NSMutableArray+DPKit.m in Sources */,
+				33B256C918985DDD00595628 /* NSDictionary+DPKit.m in Sources */,
+				33B256BD18985DDD00595628 /* NSArray+DPDictionary.m in Sources */,
+				33B256BB18985DDD00595628 /* NSArray+DateUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DPKit/DPKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -371,7 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DPKit/DPKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

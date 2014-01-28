@@ -3,6 +3,7 @@
 //
 
 #import <JMSimpleDate/NSDate+JMSimpleDate.h>
+#import "JMSimpleDate.h"
 #import "NSDate+DPKit.h"
 
 @implementation NSDate (DPKit)
