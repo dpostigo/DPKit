@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.9"
+  s.version      = "0.0.10"
   s.summary      = "Utilities for Mac OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -24,15 +24,16 @@ Pod::Spec.new do |s|
 
   s.subspec 'Shared' do |shared|
     shared.osx.source_files = 'DPKit/shared/**/*.{h,m}'
+    shared.osx.dependency  'JMSimpleDate'
+    shared.osx.dependency  'NSView-DPAutolayout'
+
     shared.ios.source_files = 'DPKit/shared/**/*.{h,m}'
+    shared.ios.dependency  'JMSimpleDate'
   end
 
   s.subspec 'Mac OS X' do |mac|
     mac.dependency  'DPKit/Shared'
     mac.dependency  'DPKit/Graphics'
-    mac.dependency  'JMSimpleDate'
-    mac.dependency  'NSView-DPAutolayout'
-
     mac.platform = :osx, '10.7'
     mac.source_files = 'DPKit/osx/*.{h,m}'
 
@@ -48,7 +49,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'iOS' do |iphone|
     iphone.dependency  'DPKit/Shared'
-    iphone.dependency  'JMSimpleDate'
     iphone.platform = :ios, '4.3'
     iphone.source_files = 'DPKit/ios/*.{h,m}'
   end
