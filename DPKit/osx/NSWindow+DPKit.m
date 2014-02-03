@@ -9,4 +9,15 @@
 - (NSView *) windowThemeFrame {
     return [[self contentView] superview];
 }
+
+- (NSView *) contentAsView {
+    return [self contentView];
+}
+
+
+- (NSRect) bounds {
+    NSRect ret = self.frame;
+    ret.origin = NSMakePoint(0, 0);
+    return ret;
+}
 @end

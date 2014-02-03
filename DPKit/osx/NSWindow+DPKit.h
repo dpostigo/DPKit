@@ -7,4 +7,6 @@
 @interface NSWindow (DPKit)
 
 - (NSView *) windowThemeFrame;
+- (NSView *) contentAsView;
+- (NSRect) bounds;
 @end

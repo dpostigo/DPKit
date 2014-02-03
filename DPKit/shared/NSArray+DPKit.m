@@ -29,4 +29,9 @@
     }
     return ret;
 }
+
+
+- (NSArray *) sortedArrayUsingDescriptor: (NSSortDescriptor *) descriptor {
+    return [self sortedArrayUsingDescriptors: [NSArray arrayWithObject: descriptor]];
+}
 @end
