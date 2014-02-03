@@ -4,7 +4,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DPWindowController : NSObject {
+@interface DPWindowController : NSWindowController {
 
 }
+
+- (void) setup;
 @end

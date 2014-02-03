@@ -8,7 +8,21 @@
 
 - (id) init {
     NSString *windowNibName = [NSStringFromClass([self class]) stringByReplacingOccurrencesOfString: @"Controller" withString: @""];
-    return [self initWithWindowNibName: windowNibName];
+    return [super initWithWindowNibName: windowNibName];
+}
+
+
+- (id) initWithWindowNibName: (NSString *) windowNibName {
+    self = [super initWithWindowNibName: windowNibName];
+    if (self) {
+        [self setup];
+    }
+
+    return self;
+}
+
+- (void) setup {
+
 }
 
 @end
