@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.12"
+  s.version      = "0.0.13"
   s.summary      = "Utilities for Mac OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
