@@ -43,6 +43,11 @@ Pod::Spec.new do |s|
       views.source_files = 'DPKit/osx/Custom Views/*.{h,m}'
     end
 
+    mac.subspec 'NSTextFieldCell' do |textFieldCell|
+      textFieldCell.platform = :osx, '10.7'
+      textFieldCell.source_files = 'DPKit/osx/NSTextFieldCell/*.{h,m}'
+    end
+
   end
 
 

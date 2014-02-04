@@ -8,5 +8,6 @@
 
 - (NSURL *) URL;
 - (BOOL) containsString: (NSString *) substring;
+- (NSString *) capitalizedSentence;
 - (NSString *) filenameEscapedString;
 @end

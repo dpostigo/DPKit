@@ -6,6 +6,7 @@
 
 @interface NSArray (DPKit)
 
+- (id) firstObject;
 - (NSArray *) objectsOfType: (Class) class;
 - (NSArray *) sortedArrayUsingDescriptor: (NSSortDescriptor *) descriptor;
 @end

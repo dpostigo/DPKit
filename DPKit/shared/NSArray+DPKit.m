@@ -5,6 +5,10 @@
 #import "NSArray+DPKit.h"
 
 @implementation NSArray (DPKit)
+
+- (id) firstObject {
+    return [self count] > 0 ? [self objectAtIndex: 0] : nil;
+}
 //
 //- (NSArray *) dictionariesWithKeys: (NSArray *) keys objects: (NSArray *) objects length: (NSUInteger) length {
 //
