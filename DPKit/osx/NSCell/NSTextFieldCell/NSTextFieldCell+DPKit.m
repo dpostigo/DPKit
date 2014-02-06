@@ -6,8 +6,5 @@
 
 @implementation NSTextFieldCell (DPKit)
 
-- (NSRect) controlBounds {
-    return self.controlView.bounds;
-}
 
 @end

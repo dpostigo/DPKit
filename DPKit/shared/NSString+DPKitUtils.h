@@ -9,5 +9,6 @@
 - (NSURL *) URL;
 - (BOOL) containsString: (NSString *) substring;
 - (NSString *) capitalizedSentence;
+- (NSString *) decapitalize;
 - (NSString *) filenameEscapedString;
 @end

@@ -1,16 +1,14 @@
 //
-// Created by Dani Postigo on 2/1/14.
-// Copyright (c) 2014 Dani Postigo. All rights reserved.
+// Created by Dani Postigo on 2/5/14.
 //
 
-#import "DPUnderlineTextFieldCell.h"
-#import "NSTextFieldCell+DPKit.h"
+#import "DPUnderlineTokenFieldCell.h"
+#import "NSCell+DPKit.h"
 
-@implementation DPUnderlineTextFieldCell
+@implementation DPUnderlineTokenFieldCell
 
 - (void) setup {
     [super setup];
-
     insets = NSEdgeInsetsMake(0, 0, 0, 0);
     self.borderColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.1];
 
@@ -42,5 +40,4 @@
     return lineRect;
 
 }
-
 @end

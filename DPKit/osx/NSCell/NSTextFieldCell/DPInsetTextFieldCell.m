@@ -3,9 +3,8 @@
 // Copyright (c) 2014 Dani Postigo. All rights reserved.
 //
 
-#import <AppKit/AppKit.h>
 #import "DPInsetTextFieldCell.h"
-#import "NSTextFieldCell+DPKit.h"
+#import "NSCell+DPKit.h"
 
 @implementation DPInsetTextFieldCell
 

@@ -2,9 +2,28 @@
 // Created by Dani Postigo on 2/2/14.
 //
 
+#import <NSColor-BlendingUtils/NSColor+BlendingUtils.h>
 #import "DPInnerShadowView.h"
 
 @implementation DPInnerShadowView
+
+@synthesize shadowColor;
+@synthesize backgroundColor;
+
+- (NSColor *) backgroundColor {
+    if (backgroundColor == nil) {
+        backgroundColor = [NSColor clearColor];
+    }
+    return backgroundColor;
+}
+
+- (NSColor *) shadowColor {
+    if (shadowColor == nil) {
+        shadowColor = [self.backgroundColor darken: 0.9];
+    }
+    return shadowColor;
+}
+
 
 - (void) drawRect: (NSRect) dirtyRect {
 
@@ -13,7 +32,7 @@
 
     [shadow setShadowBlurRadius: 3.0];
     [shadow setShadowOffset: NSMakeSize(0, -1)];
-    [shadow setShadowColor: [NSColor blackColor]];
+    [shadow setShadowColor: self.shadowColor];
 
     [NSGraphicsContext saveGraphicsState];
     [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositeSourceOver];
@@ -22,12 +41,13 @@
     //    [[NSColor clearColor] set];
     //    [path fill];
 
-    [shadow set];
-    [[NSColor grayColor] setFill];
-    [[NSColor grayColor] setStroke];
+    //    [shadow set];
+    [self.backgroundColor setFill];
+    //    [[NSColor grayColor] setStroke];
     NSRectFillUsingOperation(bounds, NSCompositeSourceOver);
 
-    [[NSColor darkGrayColor] set];
+    [shadow set];
+    [self.shadowColor set];
     NSFrameRectWithWidthUsingOperation(bounds, 1, NSCompositeSourceOver);
 
     [NSGraphicsContext restoreGraphicsState];

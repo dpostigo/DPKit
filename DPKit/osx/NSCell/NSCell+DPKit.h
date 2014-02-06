@@ -1,11 +1,11 @@
 //
-// Created by Dani Postigo on 2/1/14.
+// Created by Dani Postigo on 2/5/14.
 //
 
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-@interface NSTextFieldCell (DPKit)
+@interface NSCell (DPKit)
 
 - (NSRect) controlBounds;
 @end

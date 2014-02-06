@@ -5,6 +5,10 @@
 #import <Foundation/Foundation.h>
 
 @interface DPInnerShadowView : NSView {
-
+    NSColor *backgroundColor;
+    NSColor *shadowColor;
 }
+
+@property(nonatomic, strong) NSColor *backgroundColor;
+@property(nonatomic, strong) NSColor *shadowColor;
 @end

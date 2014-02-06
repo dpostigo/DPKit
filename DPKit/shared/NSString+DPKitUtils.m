@@ -25,6 +25,14 @@
     return ret;
 }
 
+- (NSString *) decapitalize {
+    NSString *ret = self;
+    if ([self length] > 0) {
+        ret = [NSString stringWithFormat: @"%@%@", [[self substringToIndex: 1] lowercaseString], [self substringFromIndex: 1]];
+    }
+    return ret;
+}
+
 - (NSString *) filenameEscapedString {
     NSCharacterSet *illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString: @"/\\?%*|\"<>"];
     return [[self componentsSeparatedByCharactersInSet: illegalFileNameCharacters] componentsJoinedByString: @""];
