@@ -14,6 +14,7 @@
 @property(nonatomic) NSEdgeInsets insets;
 @property(nonatomic) BOOL debugMode;
 @property(nonatomic, strong) NSColor *borderColor;
+
 - (void) setup;
 
 @end

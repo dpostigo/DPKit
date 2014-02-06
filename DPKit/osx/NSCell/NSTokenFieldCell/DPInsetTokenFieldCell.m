@@ -7,6 +7,11 @@
 
 @implementation DPInsetTokenFieldCell
 
+@synthesize insets;
+@synthesize debugMode;
+@synthesize borderColor;
+
+
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {

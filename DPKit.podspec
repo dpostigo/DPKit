@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.14"
+  s.version      = "0.0.15"
   s.summary      = "Utilities for Mac OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -61,6 +61,12 @@ Pod::Spec.new do |s|
         tokenCell.dependency 'DPKit/Mac OS X/NSCell/NSCell-Core'
         tokenCell.platform = :osx, '10.7'
         tokenCell.source_files = 'DPKit/osx/NSCell/NSTokenFieldCell/*.{h,m}'
+      end
+
+      cell.subspec 'NSComboBoxCell' do |comboCell|
+        comboCell.dependency 'DPKit/Mac OS X/NSCell/NSCell-Core'
+        comboCell.platform = :osx, '10.7'
+        comboCell.source_files = 'DPKit/osx/NSCell/NSComboBoxCell/*.{h,m}'
       end
 
     end

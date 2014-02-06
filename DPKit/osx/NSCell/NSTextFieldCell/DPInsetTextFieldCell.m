@@ -10,7 +10,6 @@
 
 @synthesize insets;
 @synthesize debugMode;
-
 @synthesize borderColor;
 
 - (id) initWithCoder: (NSCoder *) coder {
