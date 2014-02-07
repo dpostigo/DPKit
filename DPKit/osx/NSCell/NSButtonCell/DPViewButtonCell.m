@@ -2,9 +2,9 @@
 // Created by Dani Postigo on 2/7/14.
 //
 
-#import <CALayer-DPUtils/CALayer+SublayerUtils.h>
+
 #import "DPViewButtonCell.h"
-#import "CALayer+ConstraintUtils.h"
+//#import "CALayer+ConstraintUtils.h"
 #import "NSCell+DPKit.h"
 #import "NSView+DPFrameUtils.h"
 
@@ -45,7 +45,7 @@
     if (overlayLayer == nil) {
         overlayLayer = [CALayer layer];
         self.controlView.wantsLayer = YES;
-        [self.controlView.layer makeSuperlayer];
+        //[self.controlView.layer makeSuperlayer];
         [self.controlView.layer addSublayer: overlayLayer];
         //        [overlayLayer superConstrainEdges: 0];
         overlayLayer.backgroundColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.5].CGColor;
