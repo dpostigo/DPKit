@@ -8,4 +8,6 @@
 @interface NSCell (DPKit)
 
 - (NSRect) controlBounds;
+- (void) eraseControlBounds;
+- (void) eraseDrawingInRect: (NSRect) rect;
 @end

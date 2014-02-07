@@ -1,11 +1,11 @@
 //
-// Created by Dani Postigo on 2/5/14.
+// Created by Dani Postigo on 2/6/14.
 //
 
-#import "DPInsetTokenFieldCell.h"
+#import "DPComboBoxCell.h"
 #import "NSCell+DPKit.h"
 
-@implementation DPInsetTokenFieldCell
+@implementation DPComboBoxCell
 
 @synthesize insets;
 @synthesize debugMode;
@@ -31,7 +31,7 @@
 - (void) drawInteriorWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
     [super drawInteriorWithFrame: cellFrame inView: controlView];
 
-    [self eraseDrawingInRect: self.controlBounds];
+    [self eraseControlBounds];
 
     if (debugMode) {
         [self drawDrawingRect];
@@ -44,7 +44,7 @@
 - (void) drawWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
     [super drawWithFrame: cellFrame inView: controlView];
 
-    [self eraseDrawingInRect: self.controlBounds];
+    [self eraseControlBounds];
 
     if (debugMode) {
         [self drawDrawingRect];
@@ -52,6 +52,20 @@
         [self drawTitleRect];
         //        [self drawDebugRect: [self titleRectForBounds: cellFrame] color: [NSColor greenColor]];
     }
+}
+
+
+- (void) drawBottomLine {
+
+    NSRect bounds = self.controlView.bounds;
+
+    NSRect lineRect = NSMakeRect(0, bounds.size.height - 1, bounds.size.width, 1);
+    lineRect = [self titleRectForBounds: self.controlView.bounds];
+    //    lineRect.size.height = 1;
+    //    lineRect.origin.y = bounds.size.height -1;
+    [[NSColor blueColor] set];
+    NSRectFillUsingOperation(lineRect, NSCompositePlusDarker);
+
 }
 
 
@@ -116,5 +130,4 @@
     }
     return borderColor;
 }
-
 @end

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.15"
-  s.summary      = "Utilities for Mac OS X."
+  s.version      = "0.0.16"
+  s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
   s.author       = { "Dani Postigo" => "dani@firstperson.is" }
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
     shared.ios.dependency  'JMSimpleDate'
   end
 
-  s.subspec 'Mac OS X' do |mac|
+  s.subspec 'OS X' do |mac|
     mac.dependency  'DPKit/Shared'
     mac.dependency  'DPKit/Graphics'
     mac.dependency  'NSColor-BlendingUtils'
@@ -44,27 +44,31 @@ Pod::Spec.new do |s|
       views.source_files = 'DPKit/osx/Custom Views/*.{h,m}'
     end
 
-    mac.subspec 'NSCell' do |cell|
 
+    mac.subspec 'NSButton' do |button|
+        button.source_files = 'DPKit/osx/NSButton/**/*.{h,m}'
+    end
+
+    mac.subspec 'NSCell' do |cell|
       cell.subspec 'NSCell-Core' do |cellCore|
         cellCore.source_files = 'DPKit/osx/NSCell/*.{h,m}'
       end
 
       cell.subspec 'NSTextFieldCell' do |textFieldCell|
-        textFieldCell.dependency 'DPKit/Mac OS X/NSCell/NSCell-Core'
+        textFieldCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
         textFieldCell.platform = :osx, '10.7'
         textFieldCell.source_files = 'DPKit/osx/NSCell/NSTextFieldCell/*.{h,m}'
       end
 
 
       cell.subspec 'NSTokenFieldCell' do |tokenCell|
-        tokenCell.dependency 'DPKit/Mac OS X/NSCell/NSCell-Core'
+        tokenCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
         tokenCell.platform = :osx, '10.7'
         tokenCell.source_files = 'DPKit/osx/NSCell/NSTokenFieldCell/*.{h,m}'
       end
 
       cell.subspec 'NSComboBoxCell' do |comboCell|
-        comboCell.dependency 'DPKit/Mac OS X/NSCell/NSCell-Core'
+        comboCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
         comboCell.platform = :osx, '10.7'
         comboCell.source_files = 'DPKit/osx/NSCell/NSComboBoxCell/*.{h,m}'
       end

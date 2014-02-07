@@ -1,12 +1,11 @@
 //
-// Created by Dani Postigo on 2/5/14.
+// Created by Dani Postigo on 2/6/14.
 //
 
-#import "DPUnderlineTokenFieldCell.h"
-#import "NSCell+DPKit.h"
+#import "DPUnderlineComboBoxCell.h"
 #import "NSCell+DPKitUnderline.h"
 
-@implementation DPUnderlineTokenFieldCell
+@implementation DPUnderlineComboBoxCell
 
 - (void) setup {
     [super setup];
@@ -28,6 +27,5 @@
     [self.borderColor set];
     NSRectFillUsingOperation(self.underlineRect, NSCompositeSourceOver);
 }
-
 
 @end

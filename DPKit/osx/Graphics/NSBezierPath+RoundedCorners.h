@@ -18,6 +18,7 @@ typedef NSUInteger AFCornerOptions;
 
 @interface NSBezierPath (RoundedCorners)
 
++ (NSBezierPath *) bezierPathWithRoundedRect: (NSRect) rect radius: (CGFloat) radius;
 + (NSBezierPath *) bezierPathWithRoundedRect: (NSRect) rect corners: (AFCornerOptions) corners radius: (CGFloat) radius;
 - (void) appendBezierPathWithRoundedRect: (NSRect) rect corners: (AFCornerOptions) corners radius: (CGFloat) radius;
 @end

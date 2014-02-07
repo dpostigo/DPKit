@@ -7,6 +7,11 @@
 
 @implementation NSBezierPath (RoundedCorners)
 
++ (NSBezierPath *) bezierPathWithRoundedRect: (NSRect) rect radius: (CGFloat) radius {
+    return [NSBezierPath bezierPathWithRoundedRect: rect xRadius: radius yRadius: radius];
+}
+
+
 + (NSBezierPath *) bezierPathWithRoundedRect: (NSRect) rect corners: (AFCornerOptions) corners radius: (CGFloat) radius {
     NSBezierPath *path = [self bezierPath];
     [path appendBezierPathWithRoundedRect: rect corners: corners radius: radius];
