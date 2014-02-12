@@ -11,6 +11,20 @@
     return [self initWithNibName: nibName bundle: nil];
 }
 
+//- (id) init {
+//    NSString *nibName = NSStringFromClass([self class]);
+//    NSString *nibPath = [[NSBundle mainBundle] pathForResource: nibName ofType: @"nib"];
+//    if (nibPath != nil) {
+//        return [self initWithNibName: nibName bundle: nil];
+//    } else {
+//        self = [super init];
+//        if (self) {
+//
+//        }
+//        return self;
+//    }
+//}
+
 
 - (id) initWithNibName: (NSString *) nibNameOrNil bundle: (NSBundle *) nibBundleOrNil {
     self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
