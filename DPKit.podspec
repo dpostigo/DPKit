@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.16"
+  s.version      = "0.0.17"
   s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -26,19 +26,37 @@ Pod::Spec.new do |s|
     shared.osx.source_files = 'DPKit/shared/**/*.{h,m}'
     shared.osx.dependency  'JMSimpleDate'
     shared.osx.dependency  'NSView-DPAutolayout'
+    shared.osx.dependency  'NSView-NewConstraints'
 
     shared.ios.source_files = 'DPKit/shared/**/*.{h,m}'
     shared.ios.dependency  'JMSimpleDate'
+
+    shared.subspec 'Formatters' do |formatters|
+        formatters.source_files = 'DPKit/shared/Formatters/**/*.{h,m}'
+    end
+
+
   end
 
   s.subspec 'OS X' do |mac|
     mac.dependency  'DPKit/Shared'
     mac.dependency  'DPKit/Graphics'
+    mac.dependency  'DPKit/OS X/Utils'
+
     mac.dependency  'NSView-DPFrameUtils'
     mac.dependency  'NSColor-BlendingUtils'
     mac.dependency  'CALayer-DPUtils'
     mac.platform = :osx, '10.7'
+
     mac.source_files = 'DPKit/osx/*.{h,m}'
+
+
+
+    mac.subspec 'Utils' do |utils|
+      utils.platform = :osx, '10.7'
+      utils.source_files = 'DPKit/osx/Utils/**/*.{h,m}'
+    end
+
 
 
     mac.subspec 'Custom Views' do |views|
@@ -47,46 +65,49 @@ Pod::Spec.new do |s|
     end
 
 
+
+
+    mac.subspec 'DPTimeInputTextField' do |timeInputTextField|
+        timeInputTextField.dependency  'DPKit/Shared/Formatters'
+        timeInputTextField.source_files = 'DPKit/osx/DPTimeInputTextField/**/*.{h,m}'
+    end
+
     mac.subspec 'NSButton' do |button|
         button.dependency  'NSView-DPFrameUtils'
-        button.dependency  'DPKit/OS X/NSCell/NSButtonCell'
+        button.dependency  'DPKit/OS X/Cells/NSButtonCell'
         button.source_files = 'DPKit/osx/NSButton/**/*.{h,m}'
     end
 
-    mac.subspec 'NSCell' do |cell|
-        cell.subspec 'NSCell-Core' do |cellCore|
-        cellCore.source_files = 'DPKit/osx/NSCell/*.{h,m}'
-      end
+    mac.subspec 'Cells' do |cell|
+        cell.subspec 'Cells-Core' do |cellCore|
+          cellCore.source_files = 'DPKit/osx/Cells/*.{h,m}'
+        end
 
-      cell.subspec 'NSButtonCell' do |buttonCell|
-        buttonCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
-        buttonCell.platform = :osx, '10.7'
-        buttonCell.source_files = 'DPKit/osx/NSCell/NSButtonCell/*.{h,m}'
-      end
+        cell.subspec 'NSButtonCell' do |buttonCell|
+          buttonCell.dependency 'DPKit/OS X/Utils'
+          buttonCell.dependency 'DPKit/OS X/Cells/Cells-Core'
+          buttonCell.platform = :osx, '10.7'
+          buttonCell.source_files = 'DPKit/osx/Cells/NSButtonCell/*.{h,m}'
+        end
 
-      cell.subspec 'NSComboBoxCell' do |comboCell|
-        comboCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
-        comboCell.platform = :osx, '10.7'
-        comboCell.source_files = 'DPKit/osx/NSCell/NSComboBoxCell/*.{h,m}'
-      end
+        cell.subspec 'NSComboBoxCell' do |comboCell|
+          comboCell.dependency 'DPKit/OS X/Cells/Cells-Core'
+          comboCell.platform = :osx, '10.7'
+          comboCell.source_files = 'DPKit/osx/Cells/NSComboBoxCell/*.{h,m}'
+        end
 
-      cell.subspec 'NSTextFieldCell' do |textFieldCell|
-        textFieldCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
-        textFieldCell.platform = :osx, '10.7'
-        textFieldCell.source_files = 'DPKit/osx/NSCell/NSTextFieldCell/*.{h,m}'
-      end
+        cell.subspec 'NSTextFieldCell' do |textFieldCell|
+          textFieldCell.dependency 'DPKit/OS X/Cells/Cells-Core'
+          textFieldCell.platform = :osx, '10.7'
+          textFieldCell.source_files = 'DPKit/osx/Cells/NSTextFieldCell/*.{h,m}'
+        end
 
-      cell.subspec 'NSTokenFieldCell' do |tokenCell|
-        tokenCell.dependency 'DPKit/OS X/NSCell/NSCell-Core'
-        tokenCell.platform = :osx, '10.7'
-        tokenCell.source_files = 'DPKit/osx/NSCell/NSTokenFieldCell/*.{h,m}'
-      end
-
-     
-
+        cell.subspec 'NSTokenFieldCell' do |tokenCell|
+          tokenCell.dependency 'DPKit/OS X/Cells/Cells-Core'
+          tokenCell.platform = :osx, '10.7'
+          tokenCell.source_files = 'DPKit/osx/Cells/NSTokenFieldCell/*.{h,m}'
+        end
     end
-    
-
   end
 
 

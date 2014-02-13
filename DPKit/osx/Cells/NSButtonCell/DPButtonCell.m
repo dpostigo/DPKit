@@ -3,6 +3,7 @@
 //
 
 #import "DPButtonCell.h"
+#import "NSImage+DPKitEtched.h"
 
 #define SNRButtonCheckboxTextOffset               3.f
 #define SNRButtonCheckboxCheckmarkColor           [NSColor colorWithDeviceWhite:0.780 alpha:1.000]
@@ -72,6 +73,7 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
     }
 }
 
+
 - (void) setButtonType: (NSButtonType) aType {
     __buttonType = aType;
     [super setButtonType: aType];
@@ -82,7 +84,7 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 
     [super drawWithFrame: cellFrame inView: controlView];
 
-    if (__bezelPath && self.isHighlighted) {
+    if (__bezelPath && self.isHighlighted && self.isBordered) {
         [self.highlightOverlayColor set];
         [__bezelPath fill];
     }
@@ -106,6 +108,22 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 - (void) drawImage: (NSImage *) image withFrame: (NSRect) frame inView: (NSView *) controlView {
     if (__buttonType == NSSwitchButton) {
         [self drawCheckboxBezelWithFrame: frame inView: controlView];
+    } else {
+        //
+        //        [NSGraphicsContext saveGraphicsState];
+        //
+        //        NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect: frame xRadius: 5 yRadius: 5];
+        //        [path addClip];
+        //        //set the size
+        //
+        //        [self.textColor set];
+        //        [self.buttonTitleShadow set];
+        //
+        //        image.size = frame.size;
+        //        [image drawInRect: frame fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1.0 respectFlipped: YES hints: nil];
+        //        [NSGraphicsContext restoreGraphicsState];
+
+        [image drawEtchedInRect2: frame];
     }
 }
 

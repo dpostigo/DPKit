@@ -8,4 +8,7 @@
 @interface NSView (DPKit)
 
 - (void) recursiveWantsLayer;
+- (instancetype) loadFromNib;
+- (instancetype) loadFromNib: (NSString *) nibName;
+- (NSView *) viewWithIdentifier: (NSString *) identifier;
 @end
