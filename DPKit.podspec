@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.17"
+  s.version      = "0.0.18"
   s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -55,6 +55,13 @@ Pod::Spec.new do |s|
     mac.subspec 'Utils' do |utils|
       utils.platform = :osx, '10.7'
       utils.source_files = 'DPKit/osx/Utils/**/*.{h,m}'
+    end
+
+
+
+    mac.subspec 'Value Transformers' do |transformers|
+      transformers.platform = :osx, '10.7'
+      transformers.source_files = 'DPKit/osx/Value Transformers/**/*.{h,m}'
     end
 
 

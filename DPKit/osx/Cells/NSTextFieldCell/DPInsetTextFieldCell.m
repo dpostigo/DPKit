@@ -16,6 +16,7 @@
     self = [super initWithCoder: coder];
     if (self) {
         [self setup];
+
     }
 
     return self;
