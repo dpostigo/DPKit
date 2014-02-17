@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.18"
+  s.version      = "0.0.19"
   s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -23,12 +23,12 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Shared' do |shared|
-    shared.osx.source_files = 'DPKit/shared/**/*.{h,m}'
+    shared.osx.source_files = 'DPKit/shared/*.{h,m}'
     shared.osx.dependency  'JMSimpleDate'
     shared.osx.dependency  'NSView-DPAutolayout'
     shared.osx.dependency  'NSView-NewConstraints'
 
-    shared.ios.source_files = 'DPKit/shared/**/*.{h,m}'
+    shared.ios.source_files = 'DPKit/shared/*.{h,m}'
     shared.ios.dependency  'JMSimpleDate'
 
     shared.subspec 'Formatters' do |formatters|
@@ -58,7 +58,6 @@ Pod::Spec.new do |s|
     end
 
 
-
     mac.subspec 'Value Transformers' do |transformers|
       transformers.platform = :osx, '10.7'
       transformers.source_files = 'DPKit/osx/Value Transformers/**/*.{h,m}'
@@ -77,6 +76,10 @@ Pod::Spec.new do |s|
     mac.subspec 'DPTimeInputTextField' do |timeInputTextField|
         timeInputTextField.dependency  'DPKit/Shared/Formatters'
         timeInputTextField.source_files = 'DPKit/osx/DPTimeInputTextField/**/*.{h,m}'
+    end
+
+    mac.subspec 'DPBasicOutlineView' do |outlineView|
+        outlineView.source_files = 'DPKit/osx/DPBasicOutlineView/**/*.{h,m}'
     end
 
     mac.subspec 'NSButton' do |button|

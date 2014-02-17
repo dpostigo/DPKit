@@ -4,7 +4,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DPDoubleTransformer : NSValueTransformer {
+@interface DPHourMinuteTransformer : NSValueTransformer {
 
 }
 @end

@@ -6,6 +6,10 @@
 
 @implementation DPWindowController
 
+@synthesize currentController;
+
+@synthesize contentView;
+
 - (id) init {
     NSString *windowNibName = [NSStringFromClass([self class]) stringByReplacingOccurrencesOfString: @"Controller" withString: @""];
     return [self initWithWindowNibName: windowNibName];

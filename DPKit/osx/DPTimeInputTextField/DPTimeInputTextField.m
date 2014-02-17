@@ -3,6 +3,7 @@
 // Copyright (c) 2014 Dani Postigo. All rights reserved.
 //
 
+#import <DPKit/NSString+DPKitUtils.h>
 #import "DPTimeInputTextField.h"
 #import "DPHourMinuteFormatter.h"
 
@@ -12,59 +13,38 @@
 
 - (void) awakeFromNib {
     [super awakeFromNib];
-    self.formatter = [[DPHourMinuteFormatter alloc] init];
-    self.doubleValue = 0;
+
+    NSLog(@"%s, self.doubleValue = %f", __PRETTY_FUNCTION__, self.doubleValue);
     super.delegate = self;
-
-    trackingArea = [[NSTrackingArea alloc] initWithRect: self.frame options: (NSTrackingActiveInKeyWindow | NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate) owner: self userInfo: nil];
-    [self addTrackingArea: trackingArea];
-
-    //    [self setEnabled: NO];
-    //    [self resetCursorRects];
-    //    [self updateTrackingAreas];
 
 }
 
+- (void) setStringValue: (NSString *) aString {
+    [super setStringValue: aString];
+}
 
+- (void) setDoubleValue: (double) aDouble {
+    [super setDoubleValue: aDouble];
+    //    NSLog(@"%s, self.doubleValue = %f", __PRETTY_FUNCTION__, self.doubleValue);
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    self.objectValue = [NSNumber numberWithDouble: self.doubleValue];
+}
 
 
 - (void) updateTrackingAreas {
     [super updateTrackingAreas];
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    trackingArea = [[NSTrackingArea alloc] initWithRect: self.frame options: (NSTrackingActiveInKeyWindow | NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate) owner: self userInfo: nil];
+    [self addTrackingArea: trackingArea];
 
-    //    NSLog(@"self.frame = %@", NSStringFromRect(self.frame));
-    //
-    //    trackingArea = [[NSTrackingArea alloc] initWithRect: self.frame options: (NSTrackingActiveInKeyWindow | NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate) owner: self userInfo: nil];
-    //    [self addTrackingArea: trackingArea];
 }
-//
 
-//
-//- (void) updateTrackingAreas {
-//    [super updateTrackingAreas];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    NSLog(@"self.trackingAreas = %@", self.trackingAreas);
-//
-//}
 
 - (void) cursorUpdate: (NSEvent *) event {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [super cursorUpdate: event];
 
     [[NSCursor crosshairCursor] set];
 
 }
 
-//
-//- (void) resetCursorRects {
-//    [super resetCursorRects];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    NSCursor *cursor = [NSCursor arrowCursor];
-//    [cursor setOnMouseEntered: YES];
-//    //    [cursor setOnMouseExited: YES];
-//    [self addCursorRect: self.frame cursor: cursor];
-//    //    [cursor setOnMouseEntered: YES];
-//}
 
 - (void) mouseDown: (NSEvent *) theEvent {
     [super mouseDown: theEvent];
@@ -89,10 +69,8 @@
 }
 
 
-- (BOOL) acceptsFirstResponder {
-    return YES;
-}
 
+#pragma mark Keys
 
 - (BOOL) control: (NSControl *) control textView: (NSTextView *) textView doCommandBySelector: (SEL) commandSelector {
     BOOL ret = NO;
@@ -120,61 +98,41 @@
 
         }
     } else if (commandSelector == @selector(selectAll:)) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
+        NSLog(@"commandSelector = %@", NSStringFromSelector(commandSelector));
     }
     return ret;
 }
 
-//- (BOOL) control: (NSControl *) control didFailToFormatString: (NSString *) string errorDescription: (NSString *) error {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    NSLog(@"string = %@", string);
-//    if (self.hourMinuteFormatter) {
-//
-//        NSString *correctedHour = [[NSString stringWithFormat: @"%li", [self.hourMinuteFormatter hourValueForString: string]] substringToIndex: 2];
-//        NSString *correctedMinute = [[NSString stringWithFormat: @"%li", [self.hourMinuteFormatter minuteValueForString: string]] substringToIndex: 2];
-//
-//    }
-//
-//    return YES;
-//}
+
+- (BOOL) becomeFirstResponder {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
+    return [super becomeFirstResponder];
+}
+
+- (void) cancelOperation: (id) sender {
+    NSUInteger dividerLocation = self.dividerLocation;
+
+    if ([self.currentEditor.string containsString: @":"] && self.currentEditor.selectedRange.length > 0) {
+        if (NSEqualRanges(self.currentEditor.selectedRange, self.hourRange)) {
+            self.currentEditor.selectedRange = NSMakeRange(self.dividerLocation, 0);
+        } else {
+            self.currentEditor.selectedRange = NSMakeRange([self.currentEditor.string length], 0);
+        }
+    }
+}
+
+- (void) selectAll: (id) sender {
+    //    [super selectAll: sender];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
 
 
 - (void) selectText: (id) sender {
     [super selectText: sender];
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     self.currentEditor.selectedRange = self.hourRange;
 }
-
-
-
-//
-//
-//- (BOOL) control: (NSControl *) control textShouldBeginEditing: (NSText *) fieldEditor {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    return NO;
-//}
-//
-//- (void) textDidEndEditing: (NSNotification *) notification {
-//    [super textDidEndEditing: notification];
-//}
-//
-//- (void) textDidChange: (NSNotification *) notification {
-//    [super textDidChange: notification];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//}
-//
-//
-//- (BOOL) textShouldBeginEditing: (NSText *) textObject {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    return [super textShouldBeginEditing: textObject];
-//}
-//
-//
-//- (void) textDidBeginEditing: (NSNotification *) notification {
-//    [super textDidBeginEditing: notification];
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    self.currentEditor.selectedRange = self.hourRange;
-//
-//}
 
 
 - (void) setDelegate: (id <NSTextFieldDelegate>) anObject {
@@ -182,7 +140,7 @@
 }
 
 - (NSTimeInterval) currentIncrementValue {
-    NSTimeInterval ret = 0;
+    NSTimeInterval ret = self.minute;
     NSRange range = self.currentEditor.selectedRange;
     if (range.length == 2) {
         if (range.location == 0) {
