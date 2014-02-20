@@ -6,5 +6,7 @@
 
 @interface NSBundle (DPKit)
 
+- (NSArray *) windowNibs;
+- (NSArray *) resourceContents;
 + (NSString *) bundleDisplayName;
 @end

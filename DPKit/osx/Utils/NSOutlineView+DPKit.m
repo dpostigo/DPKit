@@ -13,13 +13,23 @@
     }
 }
 
+//
+//- (void) deleteSelectedItem {
+//
+//    if ([self numberOfSelectedRows] == 0) return;
+//
+//    NSUInteger index = [self selectedRow];
+//
+//    [documentController deleteItemWithIndex: index];
+//}
 
 - (NSArray *) groupItems {
     NSMutableArray *ret = [[NSMutableArray alloc] init];
 
     for (int j = 0; j < self.numberOfRows; j++) {
         id item = [self itemAtRow: j];
-        if ([self parentForItem: item]) {
+
+        if ([self isExpandable: item]) {
             [ret addObject: item];
         }
     }
