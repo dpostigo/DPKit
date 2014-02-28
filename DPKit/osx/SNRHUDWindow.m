@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 indragie.com. All rights reserved.
 //
 
-#import <DPWindow/DPWindow.h>
 #import "SNRHUDWindow.h"
 #import "SNRHUDConstants.h"
 #import "SNRHUDWindowFrameView.h"
