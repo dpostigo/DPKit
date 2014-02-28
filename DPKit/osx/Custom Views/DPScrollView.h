@@ -4,7 +4,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class DPFlippedView;
+
 @interface DPScrollView : NSScrollView {
 
+    DPFlippedView *flippedView;
 }
+
+@property(nonatomic, strong) DPFlippedView *flippedView;
 @end

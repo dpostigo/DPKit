@@ -4,6 +4,7 @@
 
 #import "DPButtonCell.h"
 #import "NSImage+DPKitEtched.h"
+#import "NSCell+DPKit.h"
 
 #define SNRButtonCheckboxTextOffset               3.f
 #define SNRButtonCheckboxCheckmarkColor           [NSColor colorWithDeviceWhite:0.780 alpha:1.000]
@@ -167,12 +168,76 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 
     NSShadow *textShadow = self.buttonTitleShadow;
 
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys: self.textFont, NSFontAttributeName, self.textColor, NSForegroundColorAttributeName, textShadow, NSShadowAttributeName, nil];
-    NSAttributedString *attrLabel = [[NSAttributedString alloc] initWithString: label attributes: attributes];
 
-    NSSize labelSize = attrLabel.size;
-    NSRect labelRect = NSMakeRect(NSMidX(frame) - (labelSize.width / 2.f), NSMidY(frame) - (labelSize.height / 2.f), labelSize.width, labelSize.height);
-    [attrLabel drawInRect: NSIntegralRect(labelRect)];
+    NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
+    [attributes setObject: self.font forKey: NSFontAttributeName];
+    [attributes setObject: self.textColor forKey: NSForegroundColorAttributeName];
+    [attributes setObject: textShadow forKey: NSShadowAttributeName];
+
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.alignment = self.alignment;
+    [attributes setObject: style forKey: NSParagraphStyleAttributeName];
+
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString: label attributes: attributes];
+
+    //    NSSize labelSize = NSMakeSize(attributedString.size.width, self.font.ascender);
+    NSSize labelSize = attributedString.size;
+
+    NSRect bounds = self.controlBounds;
+    NSRect labelRect = NSMakeRect(0, 0, labelSize.width, labelSize.height);
+    labelRect.origin.x = (bounds.size.width - labelSize.width) / 2;
+    labelRect.origin.y = (bounds.size.height - labelSize.height) / 2;
+
+    CGFloat offset = labelRect.size.height;
+    if (self.font.leading > 0) {
+        offset -= (self.font.ascender - self.font.descender);
+        offset += self.font.leading;
+    } else {
+        offset -= self.font.ascender;
+    }
+    labelRect.origin.y -= (offset / 2);
+
+    //    //    labelRect.origin.y = frame.origin.y;
+    //
+    //
+    //    //    [attributedString drawInRect: labelRect];
+    //    //    CGFloat pixel = self.font.pointSize * dpi / 72
+    //
+    //    //    [attributedString drawWithRect: labelRect options: NSStringDrawingUsesLineFragmentOrigin];
+    //    //    [attributedString drawWithRect: NSIntegralRect(labelRect) options: NSStringDrawingUsesLineFragmentOrigin];
+    //
+    //
+    //    //    CGFloat diff = attributedString.size.height - self.font.pointSize;
+    //    //    NSLog(@"diff = %f", diff);
+    //    //    labelRect.origin.y -= (diff / 2);
+    //    //    labelRect.size.height -= (diff / 2);
+    //
+    //    [[NSColor redColor] set];
+    //    NSFrameRectWithWidth(frame, 0.5);
+    //    //
+    //    //    [[NSColor yellowColor] set];
+    //    //    NSFrameRectWithWidth(labelRect, 0.5);
+    //
+    //    NSLog(@"red labelRect = %@", NSStringFromRect(labelRect));
+
+    //    NSRect labelRect = NSMakeRect(NSMidX(frame) - (labelSize.width / 2.f), NSMidY(frame) - (labelSize.height / 2.f), labelSize.width, labelSize.height);
+
+
+    NSRect fontRect = self.font.boundingRectForFont;
+    fontRect.origin = labelRect.origin;
+    //    fontRect.origin = NSMakePoint(0, 0);
+
+    //    CGFloat diff = attributedString.size.height - self.font.leading;
+    //    labelRect.origin.y -= (diff / 2);
+
+    //    [[NSColor redColor] set];
+    //    NSFrameRectWithWidth(labelRect, 0.5);
+    //
+    //    [[NSColor yellowColor] set];
+    //    NSFrameRectWithWidth(fontRect, 0.5);
+
+    [attributedString drawInRect: labelRect];
+
     return labelRect;
 }
 

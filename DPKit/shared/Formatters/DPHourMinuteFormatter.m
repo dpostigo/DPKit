@@ -70,7 +70,7 @@
         if (!hourFound || hour < 0) {
             if (error) {
                 if (!hourFound) {
-                    *error = [NSString stringWithFormat: @"No hour value found"];
+                    *error = [NSString stringWithFormat: @"No hourInterval value found"];
                 }
                 else {
                     *error = [NSString stringWithFormat: @"Hour evaluates to an incorrect value of %d", (int) hour];

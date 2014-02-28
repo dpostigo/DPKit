@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SNRHUDWindowButtonCell : NSButtonCell
+@interface SNRHUDWindowButton : NSButton {
 
+}
 @end

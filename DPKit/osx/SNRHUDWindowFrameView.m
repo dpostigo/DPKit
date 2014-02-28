@@ -3,11 +3,19 @@
 //
 
 #import "SNRHUDWindowFrameView.h"
-
-
-
+#import "SNRHUDConstants.h"
 
 @implementation SNRHUDWindowFrameView
+
+//- (BOOL) canBecomeKeyView {
+//    return NO;
+//}
+
+
+//- (BOOL) acceptsFirstResponder {
+//    return NO;
+//}
+
 
 - (void) drawRect: (NSRect) dirtyRect {
     NSRect drawingRect = NSInsetRect(self.bounds, 0.5f, 0.5f);

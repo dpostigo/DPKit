@@ -10,13 +10,6 @@
 
 // TODO: Add close button
 
-@interface SNRHUDWindow : NSWindow {
-    NSButton *closeButton;
+@interface SNRHUDWindow : NSWindow
 
-    CGFloat titleBarHeight;
-}
-
-@property(nonatomic) CGFloat titleBarHeight;
-
-+ (CGFloat) titleBarHeight;
 @end

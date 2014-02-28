@@ -6,36 +6,23 @@
 //  Copyright (c) 2012 indragie.com. All rights reserved.
 //
 
-#import <DPWindow/DPWindow.h>
 #import "SNRHUDWindow.h"
-#import "SNRHUDConstants.h"
 #import "SNRHUDWindowFrameView.h"
 #import "SNRHUDWindowButtonCell.h"
-#import "SNRHUDWindowButton.h"
+#import "SNRHUDConstants.h"
 
 @implementation SNRHUDWindow {
     NSView *__customContentView;
 }
 
-@synthesize titleBarHeight;
-
-//- (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) windowStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) deferCreation {
-//    if ((self = [super initWithContentRect: contentRect styleMask: NSBorderlessWindowMask backing: bufferingType defer: deferCreation])) {
-//        [self setOpaque: NO];
-//        [self setBackgroundColor: [NSColor clearColor]];
-//        [self setMovableByWindowBackground: YES];
-//        //        [self setLevel: NSFloatingWindowLevel];
-//    }
-//    return self;
-//}
-
-
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
     self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
     if (self) {
+        NSLog(@"%s", __PRETTY_FUNCTION__);
         [self setOpaque: NO];
         [self setBackgroundColor: [NSColor clearColor]];
         [self setMovableByWindowBackground: YES];
+        [self setLevel: NSFloatingWindowLevel];
     }
 
     return self;
@@ -44,17 +31,17 @@
 
 - (NSRect) contentRectForFrameRect: (NSRect) windowFrame {
     windowFrame.origin = NSZeroPoint;
-    windowFrame.size.height -= self.titleBarHeight;
+    windowFrame.size.height -= SNRWindowTitlebarHeight;
     return windowFrame;
 }
 
 + (NSRect) frameRectForContentRect: (NSRect) windowContentRect styleMask: (NSUInteger) windowStyle {
-    windowContentRect.size.height += [[self class] titleBarHeight];
+    windowContentRect.size.height += SNRWindowTitlebarHeight;
     return windowContentRect;
 }
 
 - (NSRect) frameRectForContentRect: (NSRect) windowContent {
-    windowContent.size.height += self.titleBarHeight;
+    windowContent.size.height += SNRWindowTitlebarHeight;
     return windowContent;
 }
 
@@ -65,20 +52,17 @@
     NSRect bounds = [self frame];
     bounds.origin = NSZeroPoint;
     SNRHUDWindowFrameView *frameView = [super contentView];
-
-    if (frameView == nil) {
+    if (!frameView) {
         frameView = [[SNRHUDWindowFrameView alloc] initWithFrame: bounds];
         NSSize buttonSize = SNRWindowButtonSize;
         NSRect buttonRect = NSMakeRect(SNRWindowButtonEdgeMargin, NSMaxY(frameView.bounds) - (SNRWindowButtonEdgeMargin + buttonSize.height), buttonSize.width, buttonSize.height);
-
-        closeButton = [[SNRHUDWindowButton alloc] initWithFrame: buttonRect];
+        NSButton *closeButton = [[NSButton alloc] initWithFrame: buttonRect];
         [closeButton setCell: [[SNRHUDWindowButtonCell alloc] init]];
         [closeButton setButtonType: NSMomentaryChangeButton];
         [closeButton setTarget: self];
         [closeButton setAction: @selector(close)];
         [closeButton setAutoresizingMask: NSViewMaxXMargin | NSViewMinYMargin];
         [frameView addSubview: closeButton];
-
         [super setContentView: frameView];
     }
     if (__customContentView) {
@@ -88,9 +72,11 @@
     [__customContentView setFrame: [self contentRectForFrameRect: bounds]];
     [__customContentView setAutoresizingMask: NSViewWidthSizable | NSViewHeightSizable];
     [frameView addSubview: __customContentView];
-    //    frameView.nextKeyView = __customContentView;
 }
 
+- (NSView *) contentView {
+    return __customContentView;
+}
 
 - (void) setTitle: (NSString *) aString {
     [super setTitle: aString];
@@ -100,19 +86,6 @@
 - (BOOL) canBecomeKeyWindow {
     return YES;
 }
-
-
-#pragma mark Styling
-
-
-+ (CGFloat) titleBarHeight {
-    return 22.0;
-}
-
-- (CGFloat) titleBarHeight {
-    return [[self class] titleBarHeight];
-}
-
-
 @end
+
 

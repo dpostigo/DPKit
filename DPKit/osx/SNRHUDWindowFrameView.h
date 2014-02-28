@@ -3,7 +3,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "SNRHUDWindow.m"
 
 @interface SNRHUDWindowFrameView : NSView
 
