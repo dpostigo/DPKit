@@ -7,7 +7,6 @@
 @implementation DPWindowController
 
 @synthesize currentController;
-
 @synthesize contentView;
 
 - (id) init {

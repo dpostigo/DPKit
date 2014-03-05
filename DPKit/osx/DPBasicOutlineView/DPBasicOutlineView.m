@@ -17,7 +17,6 @@
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
-
         autoexpands = YES;
     }
 
@@ -51,7 +50,7 @@
     if ([self numberOfSelectedRows] == 0) return;
     if (self.selectedRow == -1) return;
 
-    NSInteger index = [self selectedRow];
+   // NSInteger index = [self selectedRow];
 }
 
 - (void) doCommandBySelector: (SEL) aSelector {

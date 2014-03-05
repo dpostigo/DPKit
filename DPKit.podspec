@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.20"
+  s.version      = "0.0.21"
   s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -78,6 +78,14 @@ Pod::Spec.new do |s|
         timeInputTextField.source_files = 'DPKit/osx/DPTimeInputTextField/**/*.{h,m}'
     end
 
+
+
+
+    mac.subspec 'DPStatusItemView' do |timeInputTextField|
+        timeInputTextField.dependency  'DPKit/Shared/Formatters'
+        timeInputTextField.source_files = 'DPKit/osx/DPTimeInputTextField/**/*.{h,m}'
+    end
+
     mac.subspec 'DPBasicOutlineView' do |outlineView|
         outlineView.source_files = 'DPKit/osx/DPBasicOutlineView/**/*.{h,m}'
     end
@@ -131,6 +139,9 @@ Pod::Spec.new do |s|
 
   s.osx.frameworks   = 'QuartzCore', 'AppKit'
   s.ios.frameworks   = 'AppKit', 'UIKit'
+
+  
+  s.dependency 'NSView-DPFrameUtils'
 
 
 

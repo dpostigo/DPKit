@@ -2,6 +2,7 @@
 // Created by Dani Postigo on 2/8/14.
 //
 
+#import <DPKit/NSShadow+DPKit.h>
 #import "DPButtonCell.h"
 #import "NSImage+DPKitEtched.h"
 #import "NSCell+DPKit.h"
@@ -37,6 +38,8 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 
 @synthesize checkboxCheckmarkShadow;
 
+@synthesize disabledTextColor;
+
 - (id) initWithCoder: (NSCoder *) coder {
     self = [super initWithCoder: coder];
     if (self) {
@@ -60,7 +63,24 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 }
 
 - (void) setupColors {
-    BOOL drawBlueButton = YES;
+
+    textColor = [NSColor whiteColor];
+    disabledTextColor = [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5];
+
+    buttonBorderColor = [NSColor colorWithDeviceWhite: 0.0 alpha: 0.4];
+
+    buttonTitleShadow = [NSShadow new];
+    buttonTitleShadow.shadowColor = [NSColor blackColor];
+    buttonTitleShadow.shadowBlurRadius = 1.0;
+    buttonTitleShadow.shadowOffset = NSMakeSize(0.0, 1.0);
+
+    buttonHighlightColor = [NSColor colorWithDeviceWhite: 1.000 alpha: 0.050];
+
+    NSColor *topColor = [NSColor colorWithDeviceWhite: 0.220 alpha: 1.000];
+    NSColor *bottomColor = [NSColor colorWithDeviceWhite: 0.150 alpha: 1.000];
+    buttonGradient = [[NSGradient alloc] initWithStartingColor: bottomColor endingColor: topColor];
+
+    BOOL drawBlueButton = NO;
     if (drawBlueButton) {
 
         NSColor *topColor = [NSColor colorWithDeviceRed: 0.0 green: 0.53 blue: 0.87 alpha: 1.0];
@@ -81,7 +101,9 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 }
 
 - (void) drawWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
-    if (!self.isEnabled) CGContextSetAlpha([[NSGraphicsContext currentContext] graphicsPort], self.buttonDisabledAlpha);
+    if (!self.isEnabled) {
+        CGContextSetAlpha([[NSGraphicsContext currentContext] graphicsPort], self.buttonDisabledAlpha);
+    }
 
     [super drawWithFrame: cellFrame inView: controlView];
 
@@ -92,6 +114,11 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 }
 
 - (void) drawBezelWithFrame: (NSRect) frame inView: (NSView *) controlView {
+
+    if (self.bezelStyle == NSRoundedBezelStyle) {
+        frame = NSInsetRect(frame, 6, 5);
+    }
+
     [self drawButtonBezelWithFrame: frame inView: controlView];
 }
 
@@ -124,7 +151,17 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
         //        [image drawInRect: frame fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: 1.0 respectFlipped: YES hints: nil];
         //        [NSGraphicsContext restoreGraphicsState];
 
-        [image drawEtchedInRect2: frame];
+        //        [image drawEtchedInRect2: frame];
+
+        NSColor *topColor = textColor;
+        NSColor *bottomColor = [textColor colorWithAlphaComponent: 0.9];
+
+        NSGradient *gradient = [[NSGradient alloc] initWithStartingColor: topColor endingColor: bottomColor];
+        NSShadow *outerShadow = [NSShadow shadowWithColor: [NSColor colorWithDeviceWhite: 1.0 alpha: 0.5] radius: 1 offset: NSMakeSize(0, 0)];
+
+        outerShadow = self.buttonTitleShadow;
+        [image drawEtchedImageWithColor: textColor rect: frame gradient: gradient outerShadow: outerShadow];
+
     }
 }
 
@@ -145,6 +182,7 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
     [self.buttonBorderColor set];
 
     [dropShadow set];
+    [__bezelPath setLineWidth: 0.5];
     [__bezelPath stroke];
     [NSGraphicsContext restoreGraphicsState];
 
@@ -328,14 +366,6 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 }
 
 
-- (NSGradient *) buttonGradient {
-    if (buttonGradient == nil) {
-        buttonGradient = [[NSGradient alloc] initWithStartingColor: SNRButtonBlackGradientBottomColor endingColor: SNRButtonBlackGradientTopColor];
-    }
-    return buttonGradient;
-}
-
-
 - (NSShadow *) buttonDropShadow {
     if (buttonDropShadow == nil) {
         buttonDropShadow = [NSShadow new];
@@ -369,11 +399,6 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 }
 
 
-- (NSColor *) textColor {
-    if (textColor == nil) textColor = [NSColor whiteColor];
-    return textColor;
-}
-
 - (NSColor *) highlightOverlayColor {
     if (highlightOverlayColor == nil) highlightOverlayColor = [NSColor colorWithDeviceWhite: 0.000 alpha: 0.300];
     return highlightOverlayColor;
@@ -387,9 +412,6 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 
 #pragma mark Getters, checkmark
 
-#define SNRButtonCheckboxCheckmarkShadowOffset    NSMakeSize(0.f, 0.f)
-#define SNRButtonCheckboxCheckmarkShadowBlurRadius 3.f
-#define SNRButtonCheckboxCheckmarkShadowColor     [NSColor colorWithDeviceWhite:0.000 alpha:0.750]
 
 - (NSShadow *) checkboxTitleShadow {
     if (checkboxTitleShadow == nil) {
@@ -405,12 +427,12 @@ static NSString *const SNRButtonReturnKeyEquivalent = @"\r";
 - (NSShadow *) checkboxCheckmarkShadow {
     if (checkboxCheckmarkShadow == nil) {
         checkboxCheckmarkShadow = [NSShadow new];
-        checkboxCheckmarkShadow.shadowColor = SNRButtonCheckboxCheckmarkShadowColor;
-        checkboxCheckmarkShadow.shadowBlurRadius = SNRButtonCheckboxCheckmarkShadowBlurRadius;
-        checkboxCheckmarkShadow.shadowOffset = SNRButtonCheckboxCheckmarkShadowOffset;
-
+        checkboxCheckmarkShadow.shadowColor = [NSColor colorWithDeviceWhite: 0.000 alpha: 0.750];
+        checkboxCheckmarkShadow.shadowBlurRadius = 3.0;
+        checkboxCheckmarkShadow.shadowOffset = NSMakeSize(0, 0);
     }
     return checkboxCheckmarkShadow;
 }
+
 
 @end

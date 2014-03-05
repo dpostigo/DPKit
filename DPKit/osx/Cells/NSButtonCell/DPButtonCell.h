@@ -6,20 +6,19 @@
 
 @interface DPButtonCell : NSButtonCell {
     CGFloat cornerRadius;
-    CGFloat buttonDisabledAlpha;
     NSColor *highlightOverlayColor;
-
     NSShadow *checkboxCheckmarkShadow;
-    NSShadow *checkboxTitleShadow;
 
-    NSColor *textColor;
-    NSFont *textFont;
-
-    NSGradient *buttonGradient;
     NSColor *buttonBorderColor;
     NSColor *buttonHighlightColor;
+    CGFloat buttonDisabledAlpha;
     NSShadow *buttonDropShadow;
+    NSGradient *buttonGradient;
     NSShadow *buttonTitleShadow;
+    NSShadow *checkboxTitleShadow;
+    NSColor *disabledTextColor;
+    NSColor *textColor;
+    NSFont *textFont;
 
 }
 
@@ -39,6 +38,7 @@
 @property(nonatomic, strong) NSShadow *checkboxTitleShadow;
 
 
+@property(nonatomic, strong) NSColor *disabledTextColor;
 - (BOOL) isBlueButton;
 - (void) setupColors;
 - (void) drawButtonBezelWithFrame: (NSRect) frame inView: (NSView *) controlView;

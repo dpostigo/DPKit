@@ -8,9 +8,9 @@
 
 @interface DPBasicOutlineView : NSOutlineView {
 
-    __unsafe_unretained id <DPBasicOutlineViewDelegate> outlineDelegate;
     BOOL autoexpands;
     IBOutlet NSTreeController *controller;
+    __unsafe_unretained id <DPBasicOutlineViewDelegate> outlineDelegate;
 }
 
 @property(nonatomic) BOOL autoexpands;

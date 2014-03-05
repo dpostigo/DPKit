@@ -1,12 +1,13 @@
 //
-// Created by Dani Postigo on 2/12/14.
-// Copyright (c) 2014 Dani Postigo. All rights reserved.
+// Created by Dani Postigo on 2/28/14.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface DPTimeInputTextField : NSTextField <NSTextFieldDelegate> {
+@class DPTimeInputTextView;
 
-    id <NSTextFieldDelegate> __delegate;
+@interface DPTimeInputTextField : NSTextField {
+
 }
+
 @end

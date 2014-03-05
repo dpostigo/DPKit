@@ -30,8 +30,8 @@
 }
 
 
-- (void) drawInteriorWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
-    [super drawInteriorWithFrame: cellFrame inView: controlView];
+- (void) drawWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
+    [super drawWithFrame: cellFrame inView: controlView];
 
     [self eraseBorder];
 
@@ -43,8 +43,8 @@
     }
 }
 
-- (void) drawWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
-    [super drawWithFrame: cellFrame inView: controlView];
+- (void) drawInteriorWithFrame: (NSRect) cellFrame inView: (NSView *) controlView {
+    [super drawInteriorWithFrame: cellFrame inView: controlView];
 
     [self eraseBorder];
 

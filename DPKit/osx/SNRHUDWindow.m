@@ -8,7 +8,7 @@
 
 #import "SNRHUDWindow.h"
 #import "SNRHUDConstants.h"
-#import "SNRHUDWindowFrameView.h"
+#import "DPWindowFrameView.h"
 #import "SNRHUDWindowButtonCell.h"
 #import "SNRHUDWindowButton.h"
 
@@ -17,20 +17,11 @@
 }
 
 @synthesize titleBarHeight;
-
-//- (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) windowStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) deferCreation {
-//    if ((self = [super initWithContentRect: contentRect styleMask: NSBorderlessWindowMask backing: bufferingType defer: deferCreation])) {
-//        [self setOpaque: NO];
-//        [self setBackgroundColor: [NSColor clearColor]];
-//        [self setMovableByWindowBackground: YES];
-//        //        [self setLevel: NSFloatingWindowLevel];
-//    }
-//    return self;
-//}
-
+@synthesize showsCloseButton;
+@synthesize closeButton;
 
 - (id) initWithContentRect: (NSRect) contentRect styleMask: (NSUInteger) aStyle backing: (NSBackingStoreType) bufferingType defer: (BOOL) flag {
-    self = [super initWithContentRect: contentRect styleMask: aStyle backing: bufferingType defer: flag];
+    self = [super initWithContentRect: contentRect styleMask: NSResizableWindowMask backing: bufferingType defer: flag];
     if (self) {
         [self setOpaque: NO];
         [self setBackgroundColor: [NSColor clearColor]];
@@ -63,10 +54,10 @@
     }
     NSRect bounds = [self frame];
     bounds.origin = NSZeroPoint;
-    SNRHUDWindowFrameView *frameView = [super contentView];
+    DPWindowFrameView *frameView = [super contentView];
 
     if (frameView == nil) {
-        frameView = [[SNRHUDWindowFrameView alloc] initWithFrame: bounds];
+        frameView = [[DPWindowFrameView alloc] initWithFrame: bounds];
         NSSize buttonSize = SNRWindowButtonSize;
         NSRect buttonRect = NSMakeRect(SNRWindowButtonEdgeMargin, NSMaxY(frameView.bounds) - (SNRWindowButtonEdgeMargin + buttonSize.height), buttonSize.width, buttonSize.height);
 
@@ -110,6 +101,13 @@
 
 - (CGFloat) titleBarHeight {
     return [[self class] titleBarHeight];
+}
+
+
+#pragma mark Necessary overrides
+
+- (BOOL) hasTitleBar {
+    return NO;
 }
 
 

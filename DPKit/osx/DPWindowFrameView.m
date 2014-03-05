@@ -2,10 +2,10 @@
 // Created by Dani Postigo on 2/20/14.
 //
 
-#import "SNRHUDWindowFrameView.h"
+#import "DPWindowFrameView.h"
 #import "SNRHUDConstants.h"
 
-@implementation SNRHUDWindowFrameView
+@implementation DPWindowFrameView
 
 //- (BOOL) canBecomeKeyView {
 //    return NO;

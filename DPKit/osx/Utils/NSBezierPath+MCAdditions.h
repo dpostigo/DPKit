@@ -8,4 +8,5 @@
 
 @interface NSBezierPath (MCAdditions)
 - (void)fillWithInnerShadow:(NSShadow*)shadow;
+- (void) fillWithInnerShadow2: (NSShadow *) shadow1;
 @end

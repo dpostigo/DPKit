@@ -4,7 +4,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SNRHUDWindowFrameView : NSView
+@interface DPWindowFrameView : NSView
 
 - (void) snr_drawTitleInRect: (NSRect) rect;
 

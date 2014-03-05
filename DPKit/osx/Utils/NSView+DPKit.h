@@ -7,8 +7,12 @@
 
 @interface NSView (DPKit)
 
++ (instancetype) loadFromNib;
++ (instancetype) loadFromNib: (NSString *) nibName;
 - (void) recursiveWantsLayer;
 - (instancetype) loadFromNib;
 - (instancetype) loadFromNib: (NSString *) nibName;
+- (instancetype) loadFromNib: (NSString *) nibName owner: (id) owner;
 - (NSView *) viewWithIdentifier: (NSString *) identifier;
+- (void) recursivelyExecuteBlock: (void (^)(NSView *)) viewBlock;
 @end
