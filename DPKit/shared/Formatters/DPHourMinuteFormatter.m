@@ -30,7 +30,7 @@
             // Calculate the components
             NSInteger hours = intervalInt / (60 * 60);
             NSInteger minutes = (intervalInt / 60) - (hours * 60);
-            NSInteger seconds = intervalInt - (minutes * 60) - (hours * 60 * 60);
+            //            NSInteger seconds = intervalInt - (minutes * 60) - (hours * 60 * 60);
 
             // Construct the string
             NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -41,7 +41,7 @@
             //    NSString *minutesString = [[formatter stringFromNumber: @(minutes)] substringToIndex: 2];
             NSString *hoursString = [formatter stringFromNumber: @(hours)];
             NSString *minutesString = [formatter stringFromNumber: @(minutes)];
-            NSString *secondsString = [formatter stringFromNumber: @(seconds)];
+            //            NSString *secondsString = [formatter stringFromNumber: @(seconds)];
 
             ret = [NSString stringWithFormat: @"%@:%@", hoursString, minutesString];
         }
@@ -116,8 +116,9 @@
 
     // Gather our data
     NSInteger hour, minute;
-    BOOL hourFound = [scanner scanInteger: &hour];
-    BOOL minuteFound = [scanner scanInteger: &minute];
+
+    [scanner scanInteger: &hour];
+    [scanner scanInteger: &minute];
     return minute;
 }
 
@@ -127,8 +128,8 @@
 
     // Gather our data
     NSInteger hour, minute;
-    BOOL hourFound = [scanner scanInteger: &hour];
-    BOOL minuteFound = [scanner scanInteger: &minute];
+    [scanner scanInteger: &hour];
+    [scanner scanInteger: &minute];
     return hour;
 }
 @end

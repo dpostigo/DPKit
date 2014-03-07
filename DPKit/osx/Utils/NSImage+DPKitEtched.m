@@ -31,10 +31,10 @@
 
 - (void) drawEtchedImageWithColor: (NSColor *) color rect: (NSRect) rect gradient: (NSGradient *) gradient outerShadow: (NSShadow *) outerShadow {
 
-    BOOL isFlipped = [NSGraphicsContext currentContext].isFlipped;
+    //    BOOL isFlipped = [NSGraphicsContext currentContext].isFlipped;
 
 
-    CGFloat dropShadowOffsetY = rect.size.width <= 64.0 ? -1.0 : -2.0;
+    //    CGFloat dropShadowOffsetY = rect.size.width <= 64.0 ? -1.0 : -2.0;
     //    outerShadow.shadowOffset = NSMakeSize(0, dropShadowOffsetY);
     CGFloat innerShadowBlurRadius = rect.size.width <= 32.0 ? 1.0 : 4.0;
 
@@ -66,7 +66,7 @@
 
     //Draw inner outerShadow with inverted mask:
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, (CGBitmapInfo) kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
     CGContextSetBlendMode(maskContext, kCGBlendModeXOR);
     CGContextDrawImage(maskContext, maskRect, maskImage);
@@ -81,7 +81,7 @@
 
 - (void) drawEtchedImageWithColor2: (NSColor *) color rect: (NSRect) rect gradient: (NSGradient *) gradient outerShadow: (NSShadow *) outerShadow {
 
-    CGFloat dropShadowOffsetY = rect.size.width <= 64.0 ? -1.0 : -2.0;
+    //    CGFloat dropShadowOffsetY = rect.size.width <= 64.0 ? -1.0 : -2.0;
     //    outerShadow.shadowOffset = NSMakeSize(0, dropShadowOffsetY);
 
     CGFloat innerShadowBlurRadius = rect.size.width <= 32.0 ? 1.0 : 4.0;
@@ -106,7 +106,8 @@
 
     //Draw inner outerShadow with inverted mask:
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextRef maskContext = CGBitmapContextCreate(NULL, CGImageGetWidth(maskImage), CGImageGetHeight(maskImage), 8, CGImageGetWidth(maskImage) * 4, colorSpace, (CGBitmapInfo) kCGImageAlphaPremultipliedLast);
+
     CGColorSpaceRelease(colorSpace);
     CGContextSetBlendMode(maskContext, kCGBlendModeXOR);
     CGContextDrawImage(maskContext, maskRect, maskImage);
