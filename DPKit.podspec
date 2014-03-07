@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.21"
+  s.version      = "0.0.22"
   s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -46,6 +46,19 @@ Pod::Spec.new do |s|
     mac.dependency  'NSView-DPFrameUtils'
     mac.dependency  'NSColor-BlendingUtils'
     mac.dependency  'CALayer-DPUtils'
+
+    mac.osx.dependency  'DPKit-NSButton'
+    mac.osx.dependency  'DPKit-NSCell'
+    mac.osx.dependency  'DPKit-NSComboBox'
+    mac.osx.dependency  'DPKit-NSControl'
+    mac.osx.dependency  'DPKit-NSTextField'
+    # mac.dependency  'DPKit-NSTokenField'
+    mac.osx.dependency  'DPKit-NSView'
+    mac.osx.dependency  'DPKit-NSViewController'
+    mac.osx.dependency  'DPKit-NSWindow'
+    mac.osx.dependency  'DPKit-Styles'
+    mac.osx.dependency  'DPKit-TimeInput'
+
     mac.platform = :osx, '10.7'
 
     mac.source_files = 'DPKit/osx/*.{h,m}'
@@ -63,69 +76,7 @@ Pod::Spec.new do |s|
       transformers.source_files = 'DPKit/osx/Value Transformers/**/*.{h,m}'
     end
 
-
-
-    mac.subspec 'Custom Views' do |views|
-      views.platform = :osx, '10.7'
-      views.source_files = 'DPKit/osx/Custom Views/*.{h,m}'
-    end
-
-
-
-
-    mac.subspec 'DPTimeInputTextField' do |timeInputTextField|
-        timeInputTextField.dependency  'DPKit/Shared/Formatters'
-        timeInputTextField.source_files = 'DPKit/osx/DPTimeInputTextField/**/*.{h,m}'
-    end
-
-
-
-
-    mac.subspec 'DPStatusItemView' do |timeInputTextField|
-        timeInputTextField.dependency  'DPKit/Shared/Formatters'
-        timeInputTextField.source_files = 'DPKit/osx/DPTimeInputTextField/**/*.{h,m}'
-    end
-
-    mac.subspec 'DPBasicOutlineView' do |outlineView|
-        outlineView.source_files = 'DPKit/osx/DPBasicOutlineView/**/*.{h,m}'
-    end
-
-    mac.subspec 'NSButton' do |button|
-        button.dependency  'NSView-DPFrameUtils'
-        button.dependency  'DPKit/OS X/Cells/NSButtonCell'
-        button.source_files = 'DPKit/osx/NSButton/**/*.{h,m}'
-    end
-
-    mac.subspec 'Cells' do |cell|
-        cell.subspec 'Cells-Core' do |cellCore|
-          cellCore.source_files = 'DPKit/osx/Cells/*.{h,m}'
-        end
-
-        cell.subspec 'NSButtonCell' do |buttonCell|
-          buttonCell.dependency 'DPKit/OS X/Utils'
-          buttonCell.dependency 'DPKit/OS X/Cells/Cells-Core'
-          buttonCell.platform = :osx, '10.7'
-          buttonCell.source_files = 'DPKit/osx/Cells/NSButtonCell/*.{h,m}'
-        end
-
-        cell.subspec 'NSComboBoxCell' do |comboCell|
-          comboCell.dependency 'DPKit/OS X/Cells/Cells-Core'
-          comboCell.platform = :osx, '10.7'
-          comboCell.source_files = 'DPKit/osx/Cells/NSComboBoxCell/*.{h,m}'
-        end
-
-        cell.subspec 'NSTextFieldCell' do |textFieldCell|
-          textFieldCell.dependency 'DPKit/OS X/Cells/Cells-Core'
-          textFieldCell.platform = :osx, '10.7'
-          textFieldCell.source_files = 'DPKit/osx/Cells/NSTextFieldCell/*.{h,m}'
-        end
-
-        cell.subspec 'NSTokenFieldCell' do |tokenCell|
-          tokenCell.dependency 'DPKit/OS X/Cells/Cells-Core'
-          tokenCell.platform = :osx, '10.7'
-          tokenCell.source_files = 'DPKit/osx/Cells/NSTokenFieldCell/*.{h,m}'
-        end
-    end
+  
   end
 
 
@@ -141,7 +92,7 @@ Pod::Spec.new do |s|
   s.ios.frameworks   = 'AppKit', 'UIKit'
 
   
-  s.dependency 'NSView-DPFrameUtils'
+  s.osx.dependency 'NSView-DPFrameUtils'
 
 
 
