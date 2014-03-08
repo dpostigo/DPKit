@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DPKit"
-  s.version      = "0.0.24"
+  s.version      = "0.0.25"
   s.summary      = "Utilities for OS X."
   s.homepage     = "http://dpostigo.com"
   s.license      = 'BSD'
@@ -11,8 +11,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '4.3'
   s.osx.deployment_target = '10.8'
-
-
 
 
 
